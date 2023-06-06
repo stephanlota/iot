@@ -6,16 +6,16 @@ variable "secret_key" {
   default = "<PUT IN YOUR AWS SECRET KEY>"
 }
 variable "region" {
-  default = "eu-west-3"
+  default = "eu-west-1"
 }
 variable "availabilityZone_a" {
-  default = "eu-west-3a"
+  default = "eu-west-1a"
 }
 variable "availabilityZone_b" {
-  default = "eu-west-3b"
+  default = "eu-west-1b"
 }
 variable "availabilityZone_c" {
-  default = "eu-west-3c"
+  default = "eu-west-1c"
 }
 variable "instanceTenancy" {
   default = "default"
