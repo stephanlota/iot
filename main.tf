@@ -217,6 +217,7 @@ resource "aws_iot_topic_rule" "rule" {
 
 }
 
+# attachment role / policy
 resource "aws_iam_role_policy_attachment" "S3_automation_move_objects" {
   role       = aws_iam_role.iot_role.name
   policy_arn = aws_iam_policy.rule_iam_policy.arn
