@@ -33,7 +33,7 @@ resource "aws_iot_thing_principal_attachment" "iot_cert_att" {
 
 # create topic mqtt
 resource "aws_iot_policy" "topic_pubsub" {
-  name = "iot_policy_topic"
+  name = "iot_object-Policy"
 
   # Terraform's "jsonencode" function converts a
   # Terraform expression result to valid JSON syntax.
