@@ -221,3 +221,12 @@ resource "aws_iam_role_policy_attachment" "S3_automation_move_objects" {
   role       = aws_iam_role.iot_role.name
   policy_arn = aws_iam_policy.rule_iam_policy.arn
 }
+
+# copy files from www/ to bucket S3
+resource "aws_s3_bucket_object" "object" {
+  for_each = fileset("./www/", "**")
+  bucket = "iot-mqtt-s3"
+  key = each.value
+  source = "./www/${each.value}"
+  etag = filemd5("./www/${each.value}")
+}
