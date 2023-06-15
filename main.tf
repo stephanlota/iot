@@ -223,6 +223,15 @@ resource "aws_iam_role_policy_attachment" "S3_automation_move_objects" {
   policy_arn = aws_iam_policy.rule_iam_policy.arn
 }
 
+# website configuration enabled with page html
+resource "aws_s3_bucket_website_configuration" "website_configuration" {
+  bucket = aws_s3_bucket.s3_bucket.id
+
+  index_document {
+    suffix = "page1.html"
+  }
+}
+
 # copy files from www/ to bucket S3
 resource "aws_s3_bucket_object" "object" {
   for_each = fileset("./www/", "**")
